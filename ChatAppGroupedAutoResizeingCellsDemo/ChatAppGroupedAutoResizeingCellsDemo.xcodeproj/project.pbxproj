@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520FAFC921399C0D00A7CE9E /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520FAFC821399C0D00A7CE9E /* ChatMessage.swift */; };
+		520FAFCD2139A68C00A7CE9E /* DateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520FAFCC2139A68C00A7CE9E /* DateExtention.swift */; };
 		52E2CD6E2132F853005B58E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2CD6D2132F853005B58E0 /* AppDelegate.swift */; };
 		52E2CD702132F853005B58E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2CD6F2132F853005B58E0 /* ViewController.swift */; };
 		52E2CD752132F854005B58E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E2CD742132F854005B58E0 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520FAFC821399C0D00A7CE9E /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		520FAFCC2139A68C00A7CE9E /* DateExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtention.swift; sourceTree = "<group>"; };
 		52E2CD6A2132F853005B58E0 /* ChatAppGroupedAutoResizeingCellsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppGroupedAutoResizeingCellsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E2CD6D2132F853005B58E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E2CD6F2132F853005B58E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520FAFC721399BF300A7CE9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				520FAFC821399C0D00A7CE9E /* ChatMessage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		520FAFCB2139A66F00A7CE9E /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				520FAFCC2139A68C00A7CE9E /* DateExtention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		52E2CD612132F853005B58E0 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +74,8 @@
 		52E2CD6C2132F853005B58E0 /* ChatAppGroupedAutoResizeingCellsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				520FAFCB2139A66F00A7CE9E /* Extentions */,
+				520FAFC721399BF300A7CE9E /* Model */,
 				52E2CD802132FA56005B58E0 /* View */,
 				52E2CD7F2132FA50005B58E0 /* Controller */,
 				52E2CD6D2132F853005B58E0 /* AppDelegate.swift */,
@@ -151,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E2CD822132FA74005B58E0 /* ChatMessageCell.swift in Sources */,
+				520FAFC921399C0D00A7CE9E /* ChatMessage.swift in Sources */,
+				520FAFCD2139A68C00A7CE9E /* DateExtention.swift in Sources */,
 				52E2CD702132F853005B58E0 /* ViewController.swift in Sources */,
 				52E2CD6E2132F853005B58E0 /* AppDelegate.swift in Sources */,
 			);

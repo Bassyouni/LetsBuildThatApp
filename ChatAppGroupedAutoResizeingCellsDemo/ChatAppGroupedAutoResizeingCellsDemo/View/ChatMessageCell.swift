@@ -21,14 +21,40 @@ class ChatMessageCell: UITableViewCell {
     let wrapperView: UIView = {
         let view = UIView()
         view.backgroundColor = .yellow
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = 12
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    var leadingConstraint: NSLayoutConstraint!
+    var trailingConstraint: NSLayoutConstraint!
+    
+    var chatMessage: ChatMessage! {
+        didSet {
+            messageLabel.text = chatMessage.text
+            
+            if chatMessage.isInComing
+            {
+                wrapperView.backgroundColor = .white
+                messageLabel.textColor = .black
+                leadingConstraint.isActive = true
+                trailingConstraint.isActive = false
+                
+            }
+            else
+            {
+                wrapperView.backgroundColor = .blue
+                messageLabel.textColor = .white
+                leadingConstraint.isActive = false
+                trailingConstraint.isActive = true
+            }
+        }
+    }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        backgroundColor = .clear
         
         addSubview(wrapperView)
         addSubview(messageLabel)
@@ -39,8 +65,7 @@ class ChatMessageCell: UITableViewCell {
         let constraints = [
         messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32),
         messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
-        messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-        messageLabel.widthAnchor.constraint(equalToConstant: 250),
+        messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 250),
         
         wrapperView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -16),
         wrapperView.leadingAnchor.constraint(equalTo: messageLabel.leadingAnchor, constant: -16),
@@ -48,6 +73,12 @@ class ChatMessageCell: UITableViewCell {
         wrapperView.trailingAnchor.constraint(equalTo: messageLabel.trailingAnchor, constant: 16) ]
         
         NSLayoutConstraint.activate(constraints)
+        
+        leadingConstraint = messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32)
+        leadingConstraint.isActive = true
+        
+        trailingConstraint = messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32)
+        leadingConstraint.isActive = false
     }
     
     required init?(coder aDecoder: NSCoder) {
