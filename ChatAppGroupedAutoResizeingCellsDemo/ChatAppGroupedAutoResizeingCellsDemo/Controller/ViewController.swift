@@ -48,47 +48,35 @@ class ViewController: UITableViewController {
         return chatMessages.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         if let firstMessageInSection = chatMessages[section].first
         {
             let dateFormattor = DateFormatter()
             dateFormattor.dateFormat = "dd/MM/yyyy"
             let dateString = dateFormattor.string(from: firstMessageInSection.date)
-            return dateString
+            
+            let label = DateHeaderLabel()
+            label.text = dateString
+            
+            
+            let containorView = UIView()
+            
+            containorView.addSubview(label)
+            label.centerXAnchor.constraint(equalTo: containorView.centerXAnchor).isActive = true
+            label.centerYAnchor.constraint(equalTo: containorView.centerYAnchor).isActive = true
+            
+            return containorView
         }
-
-        return "Section: \(Date())"
+        return nil
     }
     
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView()
-//        headerView.frame = CGRect(x: 25, y: 25, width: 100, height: 200)
-//        headerView.backgroundColor = .green
-//        headerView.layer.cornerRadius = headerView.bounds.height / 2
-//
-//        let label = UILabel()
-//
-//        if let firstMessageInSection = chatMessages[section].first
-//        {
-//            let dateFormattor = DateFormatter()
-//            dateFormattor.dateFormat = "dd/MM/yyyy"
-//            let dateString = dateFormattor.string(from: firstMessageInSection.date)
-//            label.text = dateString
-//        }
-//
-//        headerView.addSubview(label)
-//
-//
-////        label.center = headerView.center
-//
-//
-//        return headerView
-//    }
-//
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 200
-//    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatMessages[section].count

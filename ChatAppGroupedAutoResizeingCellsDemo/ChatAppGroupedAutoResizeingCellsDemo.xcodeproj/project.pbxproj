@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		520FAFC921399C0D00A7CE9E /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520FAFC821399C0D00A7CE9E /* ChatMessage.swift */; };
 		520FAFCD2139A68C00A7CE9E /* DateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520FAFCC2139A68C00A7CE9E /* DateExtention.swift */; };
+		528AECF62141972F00A07EFC /* DateHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528AECF52141972F00A07EFC /* DateHeaderLabel.swift */; };
 		52E2CD6E2132F853005B58E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2CD6D2132F853005B58E0 /* AppDelegate.swift */; };
 		52E2CD702132F853005B58E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2CD6F2132F853005B58E0 /* ViewController.swift */; };
 		52E2CD752132F854005B58E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E2CD742132F854005B58E0 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		520FAFC821399C0D00A7CE9E /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		520FAFCC2139A68C00A7CE9E /* DateExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtention.swift; sourceTree = "<group>"; };
+		528AECF52141972F00A07EFC /* DateHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderLabel.swift; sourceTree = "<group>"; };
 		52E2CD6A2132F853005B58E0 /* ChatAppGroupedAutoResizeingCellsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppGroupedAutoResizeingCellsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E2CD6D2132F853005B58E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E2CD6F2132F853005B58E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				52E2CD812132FA74005B58E0 /* ChatMessageCell.swift */,
+				528AECF52141972F00A07EFC /* DateHeaderLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				520FAFCD2139A68C00A7CE9E /* DateExtention.swift in Sources */,
 				52E2CD702132F853005B58E0 /* ViewController.swift in Sources */,
 				52E2CD6E2132F853005B58E0 /* AppDelegate.swift in Sources */,
+				528AECF62141972F00A07EFC /* DateHeaderLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
