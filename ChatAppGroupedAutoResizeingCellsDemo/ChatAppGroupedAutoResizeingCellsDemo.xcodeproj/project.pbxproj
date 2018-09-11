@@ -137,6 +137,7 @@
 				TargetAttributes = {
 					52E2CD692132F853005B58E0 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -325,7 +326,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bassyouni.ChatAppGroupedAutoResizeingCellsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -343,7 +344,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bassyouni.ChatAppGroupedAutoResizeingCellsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -13,25 +13,55 @@ class ViewController: UITableViewController {
     //MARK:- variables
     let messageCellId = "messageID123"
     
-    let chatMessages = [
-        [
-            ChatMessage(text: "This is frist Messages", isInComing: true, date: Date.date(fromString: "27/08/2018")),
-            ChatMessage(text: "Second simi long message but not that long", isInComing: true, date: Date.date(fromString: "27/08/2018")),
-            ChatMessage(text: "i long message long message long message long message long message", isInComing: false, date: Date.date(fromString: "27/08/2018"))
-        ],
-        [
-            ChatMessage(text: "yo, dawg, whatsUp", isInComing: false, date: Date.date(fromString: "28/08/2018")),
-            ChatMessage(text: "This should be on the left in the bubble", isInComing: true, date: Date.date(fromString: "28/08/2018")),
-            ChatMessage(text: "Complete oppisite duuuh", isInComing: false, date: Date.date(fromString: "28/08/2018"))
-        ],
-        [
-            ChatMessage(text: "that way to late!!", isInComing: true, date: Date.date(fromString: "15/10/2018"))
-        ]
+//    let chatMessages = [
+//        [
+//            ChatMessage(text: "This is frist Messages", isInComing: true, date: Date.date(fromString: "27/08/2018")),
+//            ChatMessage(text: "Second simi long message but not that long", isInComing: true, date: Date.date(fromString: "27/08/2018")),
+//            ChatMessage(text: "i long message long message long message long message long message", isInComing: false, date: Date.date(fromString: "27/08/2018"))
+//        ],
+//        [
+//            ChatMessage(text: "yo, dawg, whatsUp", isInComing: false, date: Date.date(fromString: "28/08/2018")),
+//            ChatMessage(text: "This should be on the left in the bubble", isInComing: true, date: Date.date(fromString: "28/08/2018")),
+//            ChatMessage(text: "Complete oppisite duuuh", isInComing: false, date: Date.date(fromString: "28/08/2018"))
+//        ],
+//        [
+//            ChatMessage(text: "that way to late!!", isInComing: true, date: Date.date(fromString: "15/10/2018"))
+//        ]
+//    ]
+    
+    var chatMessages = [[ChatMessage]]()
+    let messagesFromServer = [ChatMessage(text: "This is frist Messages", isInComing: true, date: Date.date(fromString: "27/08/2018")),
+                              ChatMessage(text: "Second simi long message but not that long", isInComing: true, date: Date.date(fromString: "27/08/2018")),
+                              ChatMessage(text: "i long message long message long message long message long message", isInComing: false, date: Date.date(fromString: "27/08/2018")),
+                              ChatMessage(text: "yo, dawg, whatsUp", isInComing: false, date: Date.date(fromString: "28/08/2018")),
+                              ChatMessage(text: "This should be on the left in the bubble", isInComing: true, date: Date.date(fromString: "28/08/2018")),
+                              ChatMessage(text: "Complete oppisite duuuh", isInComing: false, date: Date.date(fromString: "28/08/2018")),
+                              ChatMessage(text: "thats way to late!!", isInComing: true, date: Date.date(fromString: "15/10/2018"))
+                              
     ]
+    
+    func groupMessagesByDate()
+    {
+        // group by date property
+        let messagesDict = Dictionary.init(grouping: messagesFromServer) { (element) -> Date in
+            return element.date.reduceToMonthDayYear()
+        }
+        
+        //sort the dates
+        let sortedKeys = messagesDict.keys.sorted()
+        
+        sortedKeys.forEach { (key) in
+            let values = messagesDict[key]
+            chatMessages.append(values ?? [])
+        }
+        
+    }
 
     //MARK:- view's methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        groupMessagesByDate()
         
         navigationItem.title = "Messages"
         navigationController?.navigationBar.prefersLargeTitles = true
